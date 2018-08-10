@@ -51,8 +51,8 @@ Gem::Specification.new do |spec|
   # does not matter. `gem build` throws an error if a version range is not
   # specified, so it's set arbitrarily high. For more information, see:
   # https://github.com/omc/bonsai-elasticsearch-rails/pull/6
-  spec.add_runtime_dependency 'elasticsearch-model', '< 99'
-  spec.add_runtime_dependency 'elasticsearch-rails', '< 99'
+  spec.add_runtime_dependency 'elasticsearch-model', '~>7'
+  spec.add_runtime_dependency 'elasticsearch-rails', '~>7'
 
   spec.add_development_dependency 'bundler', '~> 1'
   spec.add_development_dependency 'rake', '< 11.0'
