@@ -8,6 +8,24 @@ The bonsai-elasticsearch-rails gem automatically sets up the Elasticsearch clien
 
 This gem is tracking the elasticsearch-rails 7.x branch, which is designed to support Elasticsearch 7.x. If you have another version of Elasticsearch, please use a different branch of this project.
 
+If you see an error like this:
+
+```
+Bundler could not find compatible versions for gem "elasticsearch-model":
+  In Gemfile:
+    bonsai-elasticsearch-rails was resolved to 7.0.0, which depends on
+      elasticsearch-model (~> 7)
+
+Could not find gem 'elasticsearch-model (~> 7)', which is required by gem 'bonsai-elasticsearch-rails', in any of the sources.
+```
+
+It means that RubyGems does not have a listing for the elasticsearch-rails 7.x gem. You will need to add this to your project's Gemfile:
+
+```
+gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails', branch: 'master'
+gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails', branch: 'master'
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:
