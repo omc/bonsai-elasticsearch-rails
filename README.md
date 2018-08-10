@@ -4,12 +4,16 @@ This gem offers a shim to connect Rails apps with a Bonsai Elasticsearch cluster
 
 The bonsai-elasticsearch-rails gem automatically sets up the Elasticsearch client correctly so users don't need to worry about configuring it in their code or writing an initializer.
 
+## Notes
+
+This gem is tracking the elasticsearch-rails 0.1 branch, which is designed to support Elasticsearch 1.x. If you have another version of Elasticsearch, please use a different branch of this project.
+
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```
-gem 'bonsai-elasticsearch-rails'
+gem 'bonsai-elasticsearch-rails', '~>1'
 ```
 
 And then run:
