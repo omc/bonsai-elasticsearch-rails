@@ -1,7 +1,7 @@
 # rubocop:disable Metrics/BlockLength
 Gem::Specification.new do |spec|
   spec.name          = 'bonsai-elasticsearch-rails'
-  spec.version       = '0.3.0'
+  spec.version       = '5.0.0'
 
   spec.authors       = ['Rob Sears', 'Nick Zadrozny']
   spec.email         = ['rob@onemorecloud.com', 'nick@onemorecloud.com']
