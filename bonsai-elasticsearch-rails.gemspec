@@ -49,8 +49,8 @@ Gem::Specification.new do |spec|
 
   # This gem simply requires the listed gems to be installed, the actual version
   # does not matter. `gem build` throws an error if a version range is not
-  # specified, so it's set arbitrarily high. If Elastic ever introduces a
-  # breaking change to client instantiation, this will be updated.
+  # specified, so it's set arbitrarily high. For more information, see:
+  # https://github.com/omc/bonsai-elasticsearch-rails/pull/6
   spec.add_runtime_dependency 'elasticsearch-model', '< 99'
   spec.add_runtime_dependency 'elasticsearch-rails', '< 99'
 
