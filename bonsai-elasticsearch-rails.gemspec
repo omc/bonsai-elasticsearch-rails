@@ -1,7 +1,7 @@
 # rubocop:disable Metrics/BlockLength
 Gem::Specification.new do |spec|
   spec.name          = 'bonsai-elasticsearch-rails'
-  spec.version       = '0.3.0'
+  spec.version       = '2.0.0'
 
   spec.authors       = ['Rob Sears', 'Nick Zadrozny']
   spec.email         = ['rob@onemorecloud.com', 'nick@onemorecloud.com']
@@ -51,8 +51,8 @@ Gem::Specification.new do |spec|
   # does not matter. `gem build` throws an error if a version range is not
   # specified, so it's set arbitrarily high. For more information, see:
   # https://github.com/omc/bonsai-elasticsearch-rails/pull/6
-  spec.add_runtime_dependency 'elasticsearch-model', '< 99'
-  spec.add_runtime_dependency 'elasticsearch-rails', '< 99'
+  spec.add_runtime_dependency 'elasticsearch-model', '~>2'
+  spec.add_runtime_dependency 'elasticsearch-rails', '~>2'
 
   spec.add_development_dependency 'bundler', '~> 1'
   spec.add_development_dependency 'rake', '< 11.0'
