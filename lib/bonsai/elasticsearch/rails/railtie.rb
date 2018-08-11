@@ -3,7 +3,7 @@ module Bonsai
     module Rails
       # Use Railties
       class Railtie < ::Rails::Railtie
-        config.after_initialize do
+        initializer 'setup_elasticsearch' do
           require 'elasticsearch/model'
           require 'elasticsearch/rails'
 
