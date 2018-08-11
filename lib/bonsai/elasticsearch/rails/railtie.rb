@@ -3,7 +3,7 @@ module Bonsai
     module Rails
       # Use Railties
       class Railtie < ::Rails::Railtie
-        config.after_initialize do
+        initializer 'setup_elasticsearch' do
           require 'elasticsearch/model'
           require 'elasticsearch/rails'
 
@@ -15,7 +15,7 @@ module Bonsai
               filtered_url = url.sub(/:[^:@]+@/, ':FILTERED@')
               logger.debug('Bonsai: Initializing default Elasticsearch client'\
                            " with #{filtered_url}")
-              Elasticsearch::Model.client = ::Elasticsearch::Client.new(
+              ::Elasticsearch::Model.client = ::Elasticsearch::Client.new(
                 url: url
               )
             elsif ::Rails.env.production?
