@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Bonsai
   module Elasticsearch
     module Rails
@@ -18,14 +20,10 @@ module Bonsai
           begin
             if url && URI.parse(url)
               filtered_url = url.sub(/:[^:@]+@/, ':FILTERED@')
-              log('Bonsai: Initializing default Elasticsearch client'\
-                           " with #{filtered_url}")
-              ::Elasticsearch::Model.client = ::Elasticsearch::Client.new(
-                url: url
-              )
+              log("Bonsai: Initializing default Elasticsearch client with #{filtered_url}")
+              ::Elasticsearch::Model.client = ::Elasticsearch::Client.new(url: url)
             elsif ::Rails.env.production?
-              log('BONSAI_URL not present, proceeding with'\
-                           'Elasticsearch defaults.')
+              log('BONSAI_URL not present, proceeding with Elasticsearch defaults.')
             end
           rescue URI::InvalidURIError => e
             log("Elasticsearch cluster URL is invalid: #{e.message}")

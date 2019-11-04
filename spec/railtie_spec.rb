@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 require 'rails'
 require_relative '../lib/bonsai/elasticsearch/rails/railtie'
-require 'pry'
 
 describe Bonsai::Elasticsearch::Rails::Railtie do
   let(:initializer) do
@@ -48,6 +49,15 @@ describe Bonsai::Elasticsearch::Rails::Railtie do
         ENV['ELASTICSEARCH_URL'] = cluster_url
         simulate_rails_startup
         expect(client_url).to eql(cluster_url)
+      end
+    end
+
+    context 'when both BONSAI_URL and ELASTICSEARCH_URL exist' do
+      it 'prefers the BONSAI_URL' do
+        ENV['BONSAI_URL'] = bonsai_url
+        ENV['ELASTICSEARCH_URL'] = cluster_url
+        simulate_rails_startup
+        expect(client_url).to eql(bonsai_url)
       end
     end
   end
