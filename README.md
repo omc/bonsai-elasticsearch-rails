@@ -29,7 +29,7 @@ The gem will work with any version of Elasticsearch. Users of Elasticsearch 1.x,
 | 2.x    | '2.0.0'     | 2.x           |                           |
 | 5.x    | '5.0.0'     | 5.x           |                           |
 | 6.x    | '6.0.0'     | 6.x           | Needs extra configuration |
-| 7.x    | '7.0.1'     | master        | Needs extra configuration |
+| 7.x    | '7.0.1'     | main          | Needs extra configuration |
 
 ### Elasticsearch 1.x
 
@@ -80,8 +80,8 @@ Add the following to your Gemfile:
 
 ```ruby
 gem 'bonsai-elasticsearch-rails', '~> 7'
-gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails', branch: 'master'
-gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails', branch: 'master'
+gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails', branch: 'main'
+gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails', branch: 'main'
 ```
 
 The elasticsearch-model and elasticsearch-rails gems do not have a 6.x listing on RubyGems.org, which means they can not be added automatically via Bundler. Instead they need to be obtained from the GitHub repository.
